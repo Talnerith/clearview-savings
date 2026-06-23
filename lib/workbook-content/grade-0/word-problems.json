@@ -1,0 +1,12 @@
+[
+  { "id": "g0-wp-001", "prompt": "You have 2 apples. A friend gives you 1 more. How many apples do you have now?", "answer": "3" },
+  { "id": "g0-wp-002", "prompt": "There are 4 cups on the table. You set down 1 more cup. How many cups are there now?", "answer": "5" },
+  { "id": "g0-wp-003", "prompt": "You see 3 birds in the yard. 2 more fly in. How many birds are there?", "answer": "5" },
+  { "id": "g0-wp-004", "prompt": "There are 2 cookies on a plate. You add 2 more. How many cookies in all?", "answer": "4" },
+  { "id": "g0-wp-005", "prompt": "You pick 3 flowers. Then you pick 1 more. How many flowers do you have?", "answer": "4" },
+  { "id": "g0-wp-006", "prompt": "Two cats sit on the porch. One more cat comes. How many cats are on the porch?", "answer": "3" },
+  { "id": "g0-wp-007", "prompt": "You have 6 buttons. You take away 1 button. How many buttons are left?", "answer": "5" },
+  { "id": "g0-wp-008", "prompt": "There are 4 plates in the sink. You wash 2 of them. How many plates are still in the sink?", "answer": "2" },
+  { "id": "g0-wp-009", "prompt": "You have 3 stamps. You use 1 stamp on a letter. How many stamps are left?", "answer": "2" },
+  { "id": "g0-wp-010", "prompt": "There are 5 oranges in a bowl. You eat 1. How many oranges are left?", "answer": "4" }
+]

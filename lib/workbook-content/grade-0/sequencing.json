@@ -1,0 +1,7 @@
+[
+  { "id": "g0-sq-001", "prompt": "Put these steps for drinking a glass of water in order.", "correctSequence": ["Take a clean glass from the shelf.", "Fill the glass with water.", "Lift the glass to your mouth.", "Drink the water."] },
+  { "id": "g0-sq-002", "prompt": "Put these steps for putting on a coat in order.", "correctSequence": ["Pick up your coat.", "Put one arm in a sleeve.", "Put your other arm in the other sleeve.", "Button up the coat."] },
+  { "id": "g0-sq-003", "prompt": "Put these steps for washing your hands in order.", "correctSequence": ["Turn on the water.", "Rub soap on your hands.", "Rinse your hands under the water.", "Dry your hands with a towel."] },
+  { "id": "g0-sq-004", "prompt": "Put these steps for eating an apple in order.", "correctSequence": ["Pick up the apple.", "Wash the apple under water.", "Take a bite of the apple.", "Chew it well and swallow."] },
+  { "id": "g0-sq-005", "prompt": "Put these steps for going to bed in order.", "correctSequence": ["Put on your pajamas.", "Turn down the blankets.", "Lie down in the bed.", "Turn off the lamp."] }
+]

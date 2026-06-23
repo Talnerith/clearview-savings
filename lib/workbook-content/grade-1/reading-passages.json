@@ -1,0 +1,42 @@
+[
+  {
+    "id": "g1-rp-001",
+    "passage": "Ruth woke up early and made breakfast. She had toast with jam and a cup of coffee. Then she read the newspaper.",
+    "questions": [
+      { "q": "What did Ruth have on her toast?", "a": "Jam" },
+      { "q": "What did she do after breakfast?", "a": "Read the newspaper" }
+    ]
+  },
+  {
+    "id": "g1-rp-002",
+    "passage": "George went out to the garden after lunch. He pulled a few weeds and watered the roses. The roses were bright red.",
+    "questions": [
+      { "q": "What did George water?", "a": "The roses" },
+      { "q": "What color were the roses?", "a": "Bright red" }
+    ]
+  },
+  {
+    "id": "g1-rp-003",
+    "passage": "The mail came at noon. There was a letter from Helen's sister and a postcard from the beach. Helen read the letter first.",
+    "questions": [
+      { "q": "Who sent the letter?", "a": "Helen's sister" },
+      { "q": "Which did Helen read first?", "a": "The letter" }
+    ]
+  },
+  {
+    "id": "g1-rp-004",
+    "passage": "Frank fixed a sandwich for lunch. He sat on the back porch to eat it. A gray cat watched him from the steps.",
+    "questions": [
+      { "q": "Where did Frank sit to eat?", "a": "On the back porch" },
+      { "q": "What color was the cat?", "a": "Gray" }
+    ]
+  },
+  {
+    "id": "g1-rp-005",
+    "passage": "It was a sunny Saturday. Edith hung the wash out on the line to dry. By afternoon the sheets smelled fresh and warm.",
+    "questions": [
+      { "q": "What day was it?", "a": "Saturday" },
+      { "q": "Where did Edith hang the wash?", "a": "On the line" }
+    ]
+  }
+]

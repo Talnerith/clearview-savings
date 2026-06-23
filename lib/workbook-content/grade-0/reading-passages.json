@@ -1,0 +1,37 @@
+[
+  {
+    "id": "g0-rp-001",
+    "passage": "The cat sat by the window in the warm sun.",
+    "questions": [
+      { "q": "Where did the cat sit?", "a": "By the window" }
+    ]
+  },
+  {
+    "id": "g0-rp-002",
+    "passage": "Mary made a cup of tea. She drank it slowly.",
+    "questions": [
+      { "q": "What did Mary make?", "a": "A cup of tea" }
+    ]
+  },
+  {
+    "id": "g0-rp-003",
+    "passage": "The dog ran across the green grass. Then it lay down to rest.",
+    "questions": [
+      { "q": "What did the dog do after it ran?", "a": "It lay down to rest" }
+    ]
+  },
+  {
+    "id": "g0-rp-004",
+    "passage": "John picked one red apple from the tree.",
+    "questions": [
+      { "q": "What color was the apple?", "a": "Red" }
+    ]
+  },
+  {
+    "id": "g0-rp-005",
+    "passage": "It started to rain, so Anna opened her umbrella.",
+    "questions": [
+      { "q": "What did Anna open?", "a": "Her umbrella" }
+    ]
+  }
+]

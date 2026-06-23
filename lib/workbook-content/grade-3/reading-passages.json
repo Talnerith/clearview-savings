@@ -1,0 +1,446 @@
+[
+  {
+    "id": "g3-rp-001",
+    "passage": "The community garden behind the library opened in early May. Each plot was about ten feet square. Most of them were planted with tomatoes, peppers, and herbs by the end of the month.",
+    "questions": [
+      { "q": "Where is the community garden?", "a": "Behind the library" },
+      { "q": "How big is each plot?", "a": "About ten feet square" },
+      { "q": "What was planted in most plots?", "a": "Tomatoes, peppers, and herbs" }
+    ]
+  },
+  {
+    "id": "g3-rp-002",
+    "passage": "Howard had been baking sourdough bread for nearly thirty years. His starter, a cup of bubbly fermented dough, had been with him for the entire stretch. He fed it flour and water every day, like an old pet.",
+    "questions": [
+      { "q": "How long has Howard been baking sourdough?", "a": "Nearly thirty years" },
+      { "q": "What does he do for the starter every day?", "a": "Feeds it flour and water" }
+    ]
+  },
+  {
+    "id": "g3-rp-003",
+    "passage": "The thunderstorm came up suddenly in the afternoon. Lightning lit the dark clouds and the rain fell in sheets. Within twenty minutes the storm had passed, leaving a fresh-smelling breeze and small pools of water along the road.",
+    "questions": [
+      { "q": "How long did the storm last?", "a": "About twenty minutes" },
+      { "q": "What was left along the road?", "a": "Small pools of water" },
+      { "q": "What happened to the breeze afterwards?", "a": "It smelled fresh" }
+    ]
+  },
+  {
+    "id": "g3-rp-004",
+    "passage": "The weekly farmers' market on Main Street drew a steady crowd by mid-morning. Vendors sold fresh vegetables, jams, and homemade bread. A small band played in the corner near the bandstand.",
+    "questions": [
+      { "q": "When did the crowd build up?", "a": "By mid-morning" },
+      { "q": "Name two things the vendors sold.", "a": "Vegetables, jams, or homemade bread" }
+    ]
+  },
+  {
+    "id": "g3-rp-005",
+    "passage": "Cleo, the gray tabby, had a routine. She greeted the morning at the back door, ate her breakfast, and then climbed up to the windowsill to watch the birds. By noon she was asleep on the couch.",
+    "questions": [
+      { "q": "What kind of cat is Cleo?", "a": "A gray tabby" },
+      { "q": "Where does she sleep by noon?", "a": "On the couch" },
+      { "q": "What does she watch from the windowsill?", "a": "The birds" }
+    ]
+  },
+  {
+    "id": "g3-rp-006",
+    "passage": "The roof of the old shed was starting to leak. Stewart climbed up with a tarp and laid it across the worst spot. He would call a roofer in the morning to give an estimate.",
+    "questions": [
+      { "q": "What was wrong with the shed?", "a": "The roof was leaking" },
+      { "q": "What did Stewart use to cover the leak?", "a": "A tarp" },
+      { "q": "What was his next step?", "a": "Call a roofer for an estimate" }
+    ]
+  },
+  {
+    "id": "g3-rp-007",
+    "passage": "Mr. Donato has run the corner grocery for forty years. He knows every customer by name and remembers what they like. The cashier his daughter trained last summer is now learning to do the same.",
+    "questions": [
+      { "q": "How long has Mr. Donato run the grocery?", "a": "Forty years" },
+      { "q": "What does he remember about his customers?", "a": "What they like" },
+      { "q": "Who trained the cashier?", "a": "His daughter" }
+    ]
+  },
+  {
+    "id": "g3-rp-008",
+    "passage": "The pumpkin patch opens the first weekend of October. Families come to pick their own pumpkins from the field. There are also hay rides, hot apple cider, and a small barn with goats and sheep.",
+    "questions": [
+      { "q": "When does the pumpkin patch open?", "a": "The first weekend of October" },
+      { "q": "Name two things you can do besides pick pumpkins.", "a": "Hay rides, hot apple cider, or a barn with goats and sheep" }
+    ]
+  },
+  {
+    "id": "g3-rp-009",
+    "passage": "Helen's letter to her grandson took most of the morning. She wanted to tell him about the new puppy and the trip to the lake. By the time she sealed the envelope she had filled three pages.",
+    "questions": [
+      { "q": "Who is the letter for?", "a": "Helen's grandson" },
+      { "q": "What did she want to tell him about?", "a": "The new puppy and the trip to the lake" },
+      { "q": "How long was the letter?", "a": "Three pages" }
+    ]
+  },
+  {
+    "id": "g3-rp-010",
+    "passage": "The garage was full of boxes that needed to be sorted. Some held tools, some held photographs, and a few were filled with old magazines. Carl gave himself one Saturday a month to work on it.",
+    "questions": [
+      { "q": "What did Carl find in the boxes?", "a": "Tools, photographs, and old magazines" },
+      { "q": "How often did he work on the garage?", "a": "One Saturday a month" }
+    ]
+  },
+  {
+    "id": "g3-rp-011",
+    "passage": "The coffee shop on the corner was busy every weekday morning. Workers came in for cups before the train at quarter past eight. By nine the rush was over and the café grew quiet.",
+    "questions": [
+      { "q": "When was the coffee shop busy?", "a": "Every weekday morning" },
+      { "q": "What time did the train leave?", "a": "Quarter past eight" },
+      { "q": "When did it grow quiet?", "a": "By nine" }
+    ]
+  },
+  {
+    "id": "g3-rp-012",
+    "passage": "The river ran along the bottom of the meadow. In summer it was shallow enough to walk across. After heavy rain it could swell up, brown and quick, and you had to take the bridge instead.",
+    "questions": [
+      { "q": "Where does the river run?", "a": "Along the bottom of the meadow" },
+      { "q": "When was the river shallow?", "a": "In summer" },
+      { "q": "What had to be done after heavy rain?", "a": "Take the bridge instead" }
+    ]
+  },
+  {
+    "id": "g3-rp-013",
+    "passage": "The recipe for the apple cake had been in the family for three generations. Vivian's grandmother had brought it from Vienna. Now Vivian made it every fall when the apples came down from the orchard.",
+    "questions": [
+      { "q": "Where did the recipe come from?", "a": "Vienna" },
+      { "q": "Who originally brought the recipe?", "a": "Vivian's grandmother" },
+      { "q": "When does Vivian make it?", "a": "Every fall" }
+    ]
+  },
+  {
+    "id": "g3-rp-014",
+    "passage": "The wood stove in the cabin needed kindling and a few small logs. Once the fire caught, the room warmed in less than an hour. By bedtime the cabin was cozy and the windows had fogged up against the cold.",
+    "questions": [
+      { "q": "How long did it take for the room to warm?", "a": "Less than an hour" },
+      { "q": "What had fogged up by bedtime?", "a": "The windows" }
+    ]
+  },
+  {
+    "id": "g3-rp-015",
+    "passage": "Every morning the mail carrier walked the same route. She knew which dogs to watch out for and which porches had treats. The job took her about four hours, even in good weather.",
+    "questions": [
+      { "q": "How long did the mail route take?", "a": "About four hours" },
+      { "q": "What did she watch out for?", "a": "Dogs" },
+      { "q": "What did some porches have?", "a": "Treats" }
+    ]
+  },
+  {
+    "id": "g3-rp-016",
+    "passage": "The old quilt on the bed was made by hand. Each square was cut from a different shirt or dress in the family. Some pieces were forty years old, some were newer, and the colors had faded to a soft, even blue.",
+    "questions": [
+      { "q": "What were the squares cut from?", "a": "Old shirts and dresses in the family" },
+      { "q": "How old were the oldest pieces?", "a": "Forty years" },
+      { "q": "What color had they faded to?", "a": "A soft, even blue" }
+    ]
+  },
+  {
+    "id": "g3-rp-017",
+    "passage": "Bowling night was every Thursday at seven o'clock. Bert had been on the same team for over twenty years. The team had won the league trophy three times and finished second more often than that.",
+    "questions": [
+      { "q": "When is bowling night?", "a": "Every Thursday at seven" },
+      { "q": "How long has Bert been on his team?", "a": "Over twenty years" },
+      { "q": "How many times did they win the trophy?", "a": "Three times" }
+    ]
+  },
+  {
+    "id": "g3-rp-018",
+    "passage": "The tomato plants needed staking by the end of June. Otherwise they would topple under the weight of the fruit. Jack used wooden stakes from the shed and tied each plant up with strips of old cloth.",
+    "questions": [
+      { "q": "When did the plants need staking?", "a": "By the end of June" },
+      { "q": "Why?", "a": "So they wouldn't topple under the weight of the fruit" },
+      { "q": "What did Jack use to tie them?", "a": "Strips of old cloth" }
+    ]
+  },
+  {
+    "id": "g3-rp-019",
+    "passage": "There was a small antique shop on Elm Street. Marie liked to stop in on Saturday afternoons. She rarely bought anything but enjoyed looking at the old clocks, china teacups, and silver spoons.",
+    "questions": [
+      { "q": "Where is the antique shop?", "a": "On Elm Street" },
+      { "q": "When does Marie stop in?", "a": "Saturday afternoons" },
+      { "q": "Name two things she likes to look at.", "a": "Old clocks, china teacups, or silver spoons" }
+    ]
+  },
+  {
+    "id": "g3-rp-020",
+    "passage": "The blueberry bushes by the back fence had been there for over thirty years. They produced a heavy crop each July. Most of the berries went into pies, jam, and the freezer.",
+    "questions": [
+      { "q": "How long had the bushes been there?", "a": "Over thirty years" },
+      { "q": "When was the harvest?", "a": "Each July" },
+      { "q": "What was made from the berries?", "a": "Pies, jam, and freezer-stored fruit" }
+    ]
+  },
+  {
+    "id": "g3-rp-021",
+    "passage": "The old upright piano in the living room had not been tuned in years. Margaret arranged for a tuner to come on a Tuesday afternoon. He spent two hours adjusting the strings before he was satisfied.",
+    "questions": [
+      { "q": "Who came to the house?", "a": "A piano tuner" },
+      { "q": "How long did he spend?", "a": "Two hours" },
+      { "q": "What was he adjusting?", "a": "The strings" }
+    ]
+  },
+  {
+    "id": "g3-rp-022",
+    "passage": "The fence around the yard was weathered. Each year a few boards had to be replaced. Roger picked up the lumber on Saturday morning and finished the work by lunchtime.",
+    "questions": [
+      { "q": "What was wrong with the fence?", "a": "Weathered, and a few boards needed replacing" },
+      { "q": "When did Roger pick up the lumber?", "a": "Saturday morning" },
+      { "q": "When did he finish?", "a": "By lunchtime" }
+    ]
+  },
+  {
+    "id": "g3-rp-023",
+    "passage": "The bookstore on Maple Avenue had a small reading section in the back. Comfortable chairs sat between the shelves. Customers were welcome to sit and read for as long as they liked.",
+    "questions": [
+      { "q": "Where is the bookstore?", "a": "On Maple Avenue" },
+      { "q": "What was in the back?", "a": "A reading section" },
+      { "q": "What sat between the shelves?", "a": "Comfortable chairs" }
+    ]
+  },
+  {
+    "id": "g3-rp-024",
+    "passage": "Sheila's vegetable garden produced more zucchini than her family could eat. She gave a basket to her neighbor every week in August. The neighbor returned the kindness with jars of homemade pickles.",
+    "questions": [
+      { "q": "What did the garden produce too much of?", "a": "Zucchini" },
+      { "q": "What did Sheila give the neighbor?", "a": "A basket of zucchini every week" },
+      { "q": "What did the neighbor give back?", "a": "Jars of homemade pickles" }
+    ]
+  },
+  {
+    "id": "g3-rp-025",
+    "passage": "The trail through the woods was about three miles long. It looped around the old reservoir and back to the parking lot. Most days it took just over an hour to walk.",
+    "questions": [
+      { "q": "How long is the trail?", "a": "About three miles" },
+      { "q": "What does it loop around?", "a": "The old reservoir" },
+      { "q": "How long does it take to walk?", "a": "Just over an hour" }
+    ]
+  },
+  {
+    "id": "g3-rp-026",
+    "passage": "The snow finally melted in early April. The first crocuses came up by the porch a week later. Then came the daffodils, in clumps near the front walk.",
+    "questions": [
+      { "q": "When did the snow melt?", "a": "Early April" },
+      { "q": "What came up first?", "a": "Crocuses" },
+      { "q": "Where were the daffodils?", "a": "In clumps near the front walk" }
+    ]
+  },
+  {
+    "id": "g3-rp-027",
+    "passage": "The boiler in the basement clanked when it started up. It was an old unit and it had its quirks. Wendell had a heating company come in to check it before every winter.",
+    "questions": [
+      { "q": "Where is the boiler?", "a": "In the basement" },
+      { "q": "What does it do when it starts?", "a": "Clanks" },
+      { "q": "When does Wendell have it checked?", "a": "Before every winter" }
+    ]
+  },
+  {
+    "id": "g3-rp-028",
+    "passage": "The Sunday paper was twice as thick as the weekday edition. Maureen liked to read it slowly with a second cup of coffee. The crossword usually took her until lunchtime.",
+    "questions": [
+      { "q": "How thick is the Sunday paper?", "a": "Twice as thick as the weekday edition" },
+      { "q": "What did Maureen drink?", "a": "Coffee" },
+      { "q": "How long did the crossword take?", "a": "Until lunchtime" }
+    ]
+  },
+  {
+    "id": "g3-rp-029",
+    "passage": "The bird bath in the back garden filled with leaves every autumn. Chuck cleaned it out once a week and topped it up with fresh water. The robins and the cardinals came back as soon as it was clean.",
+    "questions": [
+      { "q": "What filled the bird bath in autumn?", "a": "Leaves" },
+      { "q": "How often did Chuck clean it?", "a": "Once a week" },
+      { "q": "What kinds of birds came back?", "a": "Robins and cardinals" }
+    ]
+  },
+  {
+    "id": "g3-rp-030",
+    "passage": "The walk to the bus stop was three blocks. Patsy timed it so she would be there exactly five minutes before the bus arrived. She used the time to chat with whoever else was waiting.",
+    "questions": [
+      { "q": "How far is the bus stop?", "a": "Three blocks" },
+      { "q": "When did Patsy try to arrive?", "a": "Five minutes before the bus" },
+      { "q": "What did she do with the time?", "a": "Chat with others waiting" }
+    ]
+  },
+  {
+    "id": "g3-rp-031",
+    "passage": "The bookcase in the den held a row of photo albums. Each was labeled with a year. Sometimes Carlos pulled one down at random to look through old pictures of his children.",
+    "questions": [
+      { "q": "What was on each album?", "a": "A label with the year" },
+      { "q": "What did Carlos look at?", "a": "Old pictures of his children" }
+    ]
+  },
+  {
+    "id": "g3-rp-032",
+    "passage": "The sewing machine in the corner had belonged to her mother. Lila had used it to make curtains, dresses, and even a few quilts over the years. The motor still hummed evenly after almost sixty years of use.",
+    "questions": [
+      { "q": "Whose machine was it originally?", "a": "Lila's mother's" },
+      { "q": "Name two things Lila made on it.", "a": "Curtains, dresses, or quilts" },
+      { "q": "How old is the machine?", "a": "Almost sixty years" }
+    ]
+  },
+  {
+    "id": "g3-rp-033",
+    "passage": "The neighborhood barbecue happened on the Saturday before the Fourth of July. Each family brought a dish to share. The Petersons were known for their potato salad and Mr. Vega for his ribs.",
+    "questions": [
+      { "q": "When was the barbecue?", "a": "The Saturday before the Fourth of July" },
+      { "q": "What did the Petersons bring?", "a": "Potato salad" },
+      { "q": "What was Mr. Vega known for?", "a": "His ribs" }
+    ]
+  },
+  {
+    "id": "g3-rp-034",
+    "passage": "The wooden rocking chair on the porch had been refinished twice. The cushion was an old quilted square stuffed with batting. Lewis liked to read there in the late afternoon when the light was gold.",
+    "questions": [
+      { "q": "How many times had the chair been refinished?", "a": "Twice" },
+      { "q": "What was the cushion stuffed with?", "a": "Batting" },
+      { "q": "When did Lewis like to read there?", "a": "Late afternoon" }
+    ]
+  },
+  {
+    "id": "g3-rp-035",
+    "passage": "The lumberyard was always busy on Saturdays. Contractors and homeowners loaded their trucks with two-by-fours, plywood, and cement bags. Theo worked the counter and knew most of the regulars.",
+    "questions": [
+      { "q": "When was the lumberyard busy?", "a": "On Saturdays" },
+      { "q": "Name two things people loaded.", "a": "Two-by-fours, plywood, or cement bags" },
+      { "q": "Where did Theo work?", "a": "The counter" }
+    ]
+  },
+  {
+    "id": "g3-rp-036",
+    "passage": "The herbs in the kitchen window grew well. Basil, parsley, and mint took up three small pots on the sill. Dolores snipped a sprig or two whenever she was cooking.",
+    "questions": [
+      { "q": "Name the three herbs.", "a": "Basil, parsley, and mint" },
+      { "q": "Where were they kept?", "a": "On the kitchen window sill" },
+      { "q": "When did Dolores use them?", "a": "Whenever she was cooking" }
+    ]
+  },
+  {
+    "id": "g3-rp-037",
+    "passage": "The clock repair shop on Pine Street had been there for over fifty years. The owner, Mr. Owens, could fix watches, mantel clocks, and grandfather clocks. He always had a few projects laid out on his bench.",
+    "questions": [
+      { "q": "Where is the shop?", "a": "On Pine Street" },
+      { "q": "How long has it been there?", "a": "Over fifty years" },
+      { "q": "Name two things Mr. Owens repairs.", "a": "Watches, mantel clocks, or grandfather clocks" }
+    ]
+  },
+  {
+    "id": "g3-rp-038",
+    "passage": "The diner on the highway never closed. Truckers stopped in at all hours, and the waitresses were used to the night shift. The pie case held a fresh selection every morning, baked on the premises.",
+    "questions": [
+      { "q": "How often does the diner close?", "a": "Never" },
+      { "q": "Who often stops in?", "a": "Truckers" },
+      { "q": "Where are the pies baked?", "a": "On the premises" }
+    ]
+  },
+  {
+    "id": "g3-rp-039",
+    "passage": "The lake froze over by January and stayed solid until late March. People drilled holes in the ice and fished for perch. There were even a few small huts set up where the regulars could stay warm.",
+    "questions": [
+      { "q": "When did the lake freeze?", "a": "By January" },
+      { "q": "When did it thaw?", "a": "Late March" },
+      { "q": "What did people fish for?", "a": "Perch" }
+    ]
+  },
+  {
+    "id": "g3-rp-040",
+    "passage": "The hedge along the driveway needed trimming. Carl pulled out the old electric trimmer and ran an extension cord from the garage. By the end of the afternoon there was a neat line all the way to the street.",
+    "questions": [
+      { "q": "What did Carl pull out?", "a": "The old electric trimmer" },
+      { "q": "Where did the extension cord run from?", "a": "The garage" },
+      { "q": "When did he finish?", "a": "By the end of the afternoon" }
+    ]
+  },
+  {
+    "id": "g3-rp-041",
+    "passage": "Claude collected stamps as a hobby. He kept them in a thick book with plastic sleeves on every page. Some of the stamps were nearly a hundred years old and came from countries that no longer existed.",
+    "questions": [
+      { "q": "What did Claude collect?", "a": "Stamps" },
+      { "q": "Where did he keep them?", "a": "In a thick book with plastic sleeves" },
+      { "q": "How old were some?", "a": "Nearly a hundred years" }
+    ]
+  },
+  {
+    "id": "g3-rp-042",
+    "passage": "The grocery store on Sunday morning was nearly empty. Joan liked to shop early, before the after-church crowd. She had her cart filled and was at the register by nine-fifteen.",
+    "questions": [
+      { "q": "When did Joan like to shop?", "a": "Sunday morning, early" },
+      { "q": "Why did she go early?", "a": "To beat the after-church crowd" },
+      { "q": "When was she at the register?", "a": "By nine-fifteen" }
+    ]
+  },
+  {
+    "id": "g3-rp-043",
+    "passage": "The sewing circle met on the second Wednesday of each month. Each member brought their current project and a snack. Over coffee and cookies they would share progress and offer tips.",
+    "questions": [
+      { "q": "When did the circle meet?", "a": "The second Wednesday of each month" },
+      { "q": "What did each member bring?", "a": "A current project and a snack" },
+      { "q": "What did they share?", "a": "Progress and tips" }
+    ]
+  },
+  {
+    "id": "g3-rp-044",
+    "passage": "The corner of the basement had been turned into a workshop. There was a workbench, a pegboard for tools, and a small radio. Doug spent winter afternoons there building birdhouses for the spring.",
+    "questions": [
+      { "q": "What was in Doug's workshop?", "a": "A workbench, a pegboard for tools, and a small radio" },
+      { "q": "What did he build?", "a": "Birdhouses" },
+      { "q": "When did he build them?", "a": "Winter afternoons" }
+    ]
+  },
+  {
+    "id": "g3-rp-045",
+    "passage": "The little market by the train station kept long hours. It opened at six in the morning and closed at midnight. Pearl stopped in once a week for milk, fruit, and a paper.",
+    "questions": [
+      { "q": "When does the market open?", "a": "Six in the morning" },
+      { "q": "When does it close?", "a": "Midnight" },
+      { "q": "What did Pearl buy?", "a": "Milk, fruit, and a paper" }
+    ]
+  },
+  {
+    "id": "g3-rp-046",
+    "passage": "The blackberry bushes along the back lane were heavy with fruit. Theo took a small bucket out and filled it in less than an hour. The berries went into a pie crust for that night's dessert.",
+    "questions": [
+      { "q": "Where were the blackberry bushes?", "a": "Along the back lane" },
+      { "q": "How long did it take to fill the bucket?", "a": "Less than an hour" },
+      { "q": "What did Theo make with the berries?", "a": "A pie" }
+    ]
+  },
+  {
+    "id": "g3-rp-047",
+    "passage": "The old town hall had a brass bell that still rang on the hour. It could be heard four blocks away on a quiet day. Visitors often asked about it, and there was a small plaque inside explaining its history.",
+    "questions": [
+      { "q": "What rang on the hour?", "a": "The brass bell" },
+      { "q": "How far away could it be heard?", "a": "Four blocks" },
+      { "q": "Where was the plaque?", "a": "Inside the town hall" }
+    ]
+  },
+  {
+    "id": "g3-rp-048",
+    "passage": "The garden shed needed a new coat of paint. Eli scraped off the loose flakes, sanded the rough patches, and laid down two coats of fresh white. By the next weekend the shed looked almost new.",
+    "questions": [
+      { "q": "What did Eli do first?", "a": "Scraped off the loose flakes" },
+      { "q": "How many coats of paint did he apply?", "a": "Two" },
+      { "q": "What color was the paint?", "a": "White" }
+    ]
+  },
+  {
+    "id": "g3-rp-049",
+    "passage": "The community center offered free yoga classes on Tuesday mornings. About a dozen people showed up most weeks. The instructor brought extra mats for anyone who didn't have one.",
+    "questions": [
+      { "q": "When were the classes?", "a": "Tuesday mornings" },
+      { "q": "How many people usually came?", "a": "About a dozen" },
+      { "q": "What did the instructor bring?", "a": "Extra mats" }
+    ]
+  },
+  {
+    "id": "g3-rp-050",
+    "passage": "The old fishing rod in the basement had belonged to Mike's father. The reel still worked smoothly after all these years. Mike planned to take his grandson out to the pond and teach him to cast it.",
+    "questions": [
+      { "q": "Where had the rod been kept?", "a": "In the basement" },
+      { "q": "Whose was it originally?", "a": "Mike's father's" },
+      { "q": "What did Mike plan to do?", "a": "Take his grandson to the pond and teach him to cast" }
+    ]
+  }
+]

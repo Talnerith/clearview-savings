@@ -1,0 +1,10 @@
+[
+  { "id": "g0-sl-001", "prompt": "Which one does not belong: cat, dog, cow, spoon?", "answer": "Spoon (the others are animals)" },
+  { "id": "g0-sl-002", "prompt": "Which is bigger: a mouse or a horse?", "answer": "A horse" },
+  { "id": "g0-sl-003", "prompt": "What comes next? 1, 2, 3, ___", "answer": "4" },
+  { "id": "g0-sl-004", "prompt": "Which one can you eat: a shoe or an apple?", "answer": "An apple" },
+  { "id": "g0-sl-005", "prompt": "Is the sun hot or cold?", "answer": "Hot" },
+  { "id": "g0-sl-006", "prompt": "Which one does not belong: red, blue, green, dog?", "answer": "Dog (the others are colors)" },
+  { "id": "g0-sl-007", "prompt": "What comes next? 2, 4, 6, ___", "answer": "8" },
+  { "id": "g0-sl-008", "prompt": "Which do you wear on your feet: a hat or shoes?", "answer": "Shoes" }
+]

@@ -1,0 +1,12 @@
+[
+  { "id": "g1-wp-001", "prompt": "You have 8 apples and pick 5 more. How many apples in all?", "answer": "13" },
+  { "id": "g1-wp-002", "prompt": "There are 12 cookies on a tray. You eat 4. How many cookies are left?", "answer": "8" },
+  { "id": "g1-wp-003", "prompt": "You buy a coffee for $3 and a muffin for $4. How much do you spend in all?", "answer": "$7" },
+  { "id": "g1-wp-004", "prompt": "You read 9 pages in the morning and 6 pages at night. How many pages in all?", "answer": "15" },
+  { "id": "g1-wp-005", "prompt": "A carton holds 12 eggs. You use 5 to bake. How many eggs are left?", "answer": "7" },
+  { "id": "g1-wp-006", "prompt": "You walk 7 blocks to the park and 7 blocks home. How many blocks did you walk?", "answer": "14" },
+  { "id": "g1-wp-007", "prompt": "There are 15 birds on a wire. 6 of them fly away. How many birds are left?", "answer": "9" },
+  { "id": "g1-wp-008", "prompt": "You have $10 and spend $4 on a loaf of bread. How much money is left?", "answer": "$6" },
+  { "id": "g1-wp-009", "prompt": "You water 6 plants, then water 8 more. How many plants did you water?", "answer": "14" },
+  { "id": "g1-wp-010", "prompt": "A pot of soup serves 10. 3 people sit down to eat. How many servings are left?", "answer": "7" }
+]

@@ -1,0 +1,48 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1778312366524,
+      "tag": "0000_amusing_master_mold",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1778375451683,
+      "tag": "0001_remarkable_nico_minoru",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1778414274321,
+      "tag": "0002_cuddly_norman_osborn",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1778492410138,
+      "tag": "0003_first_freak",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1780032368014,
+      "tag": "0004_wet_venom",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1780291568014,
+      "tag": "0005_workbook_reward_to_check",
+      "breakpoints": true
+    }
+  ]
+}

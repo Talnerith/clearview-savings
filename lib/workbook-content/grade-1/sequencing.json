@@ -1,0 +1,7 @@
+[
+  { "id": "g1-sq-001", "prompt": "Put these steps for making a cup of tea in order.", "correctSequence": ["Fill the kettle with water.", "Heat the water until it boils.", "Pour the water over a tea bag in a cup.", "Add milk or sugar if you like."] },
+  { "id": "g1-sq-002", "prompt": "Put these steps for mailing a letter in order.", "correctSequence": ["Write the letter on a sheet of paper.", "Fold it and put it in an envelope.", "Write the address and add a stamp.", "Put the envelope in the mailbox."] },
+  { "id": "g1-sq-003", "prompt": "Put these steps for making a sandwich in order.", "correctSequence": ["Lay out two slices of bread.", "Spread butter on the bread.", "Add cheese and a slice of tomato.", "Put the slices together and cut it in half."] },
+  { "id": "g1-sq-004", "prompt": "Put these steps for doing the laundry in order.", "correctSequence": ["Sort the clothes into a basket.", "Put them in the washing machine with soap.", "Move the wet clothes to the dryer.", "Fold the dry clothes and put them away."] },
+  { "id": "g1-sq-005", "prompt": "Put these steps for watering the garden in order.", "correctSequence": ["Fill the watering can at the tap.", "Carry it out to the garden.", "Pour water around each plant.", "Set the empty can back by the door."] }
+]

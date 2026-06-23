@@ -1,0 +1,10 @@
+[
+  { "id": "g1-sl-001", "prompt": "Which one does not belong: spoon, fork, knife, sock?", "answer": "Sock (the others are for eating)" },
+  { "id": "g1-sl-002", "prompt": "What comes next? 5, 10, 15, ___", "answer": "20" },
+  { "id": "g1-sl-003", "prompt": "If today is Friday, what day is tomorrow?", "answer": "Saturday" },
+  { "id": "g1-sl-004", "prompt": "Which holds more water: a teaspoon or a bucket?", "answer": "A bucket" },
+  { "id": "g1-sl-005", "prompt": "Which one does not belong: rose, daisy, tulip, table?", "answer": "Table (the others are flowers)" },
+  { "id": "g1-sl-006", "prompt": "What comes next? 10, 9, 8, ___", "answer": "7" },
+  { "id": "g1-sl-007", "prompt": "If it is raining, what should you take outside: an umbrella or a fan?", "answer": "An umbrella" },
+  { "id": "g1-sl-008", "prompt": "Which season is colder: summer or winter?", "answer": "Winter" }
+]
