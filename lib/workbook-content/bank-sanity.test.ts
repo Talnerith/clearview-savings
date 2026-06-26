@@ -16,6 +16,9 @@ const MIN_BANK_SIZE: Record<WorkbookCategory, number> = {
   "word-problems": 6,
   "reading-passages": 3,
   "sequencing": 2,
+  // copy-shape replaced sequencing in PAGE_SHAPES; reading and mixed each draw
+  // 2 on a single page, so the bank must hold at least 2 (ADR 0007).
+  "copy-shape": 2,
   "simple-logic": 4,
 };
 
@@ -139,6 +142,60 @@ describe.each(GRADES)("grade-%i sequencing bank", (grade) => {
       expect(p.correctSequence.length, `id=${p.id}`).toBeGreaterThanOrEqual(4);
       for (const step of p.correctSequence) {
         expect(step.trim(), `id=${p.id}`).not.toEqual("");
+      }
+    }
+  });
+
+  it("every id is unique within the bank", () => {
+    const ids = bank.map((p) => p.id);
+    expect(new Set(ids).size).toBe(ids.length);
+  });
+});
+
+// Coordinates live in a 0 0 100 100 viewBox; flag anything that escapes it so
+// a fat-fingered point can't silently clip outside the printed/answer-key box.
+const SHAPE_ELEMENT_TYPES = [
+  "line",
+  "polyline",
+  "polygon",
+  "circle",
+  "ellipse",
+  "rect",
+  "path",
+];
+
+function pointsInRange(points: string): boolean {
+  const nums = points.trim().split(/[\s,]+/).map(Number);
+  return nums.every((n) => Number.isFinite(n) && n >= 0 && n <= 100);
+}
+
+describe.each(GRADES)("grade-%i copy-shape bank", (grade) => {
+  const bank = getProblemBank(grade, "copy-shape");
+
+  it("is non-empty", () => {
+    expect(bank.length).toBeGreaterThan(0);
+  });
+
+  it("every problem has a prompt, a name, and ≥1 element", () => {
+    for (const p of bank) {
+      expect(p.prompt.trim(), `id=${p.id}`).not.toEqual("");
+      expect(p.name.trim(), `id=${p.id}`).not.toEqual("");
+      expect(p.elements.length, `id=${p.id}`).toBeGreaterThanOrEqual(1);
+    }
+  });
+
+  it("every element is a known type with in-range coordinates", () => {
+    for (const p of bank) {
+      for (const el of p.elements) {
+        expect(SHAPE_ELEMENT_TYPES, `id=${p.id}`).toContain(el.type);
+        if (el.type === "polyline" || el.type === "polygon") {
+          expect(pointsInRange(el.points), `id=${p.id} points`).toBe(true);
+        } else if (el.type === "line") {
+          for (const n of [el.x1, el.y1, el.x2, el.y2]) {
+            expect(n, `id=${p.id} line`).toBeGreaterThanOrEqual(0);
+            expect(n, `id=${p.id} line`).toBeLessThanOrEqual(100);
+          }
+        }
       }
     }
   });

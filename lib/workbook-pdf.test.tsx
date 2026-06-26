@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import type { Patient } from "@/lib/db/schema";
+import { sampleWorkbookContent } from "@/lib/workbook-content";
 import type { WorkbookSample } from "@/lib/workbook-content/types";
 
 import { renderWorkbookPdfStream } from "./workbook-pdf";
@@ -47,6 +48,37 @@ describe("renderWorkbookPdfStream", () => {
       code: "WBREWARD",
       createdAt: new Date("2026-06-06T00:00:00Z"),
       sample,
+      locale: "en-US",
+      amountCents: 500,
+      currency: "USD",
+    });
+    const buf = await collect(stream);
+    expect(buf.subarray(0, 5).toString("latin1")).toBe("%PDF-");
+    expect(buf.length).toBeGreaterThan(1000);
+  });
+
+  // A reading workbook includes a copy-the-drawing page, which renders the
+  // reference figures as @react-pdf SVG primitives. A bad primitive (wrong
+  // prop, unsupported tag) throws during render, so a clean %PDF proves the
+  // copy-shape SVG path composes. Grade 3 exercises every element type used
+  // by the banks (line, polyline, polygon, circle, ellipse, rect).
+  it("renders a workbook whose copy-shape page draws SVG figures", async () => {
+    const readingSample = sampleWorkbookContent({
+      kind: "reading",
+      grade: 3,
+      seed: "copy-shape-render-test",
+    });
+    expect(
+      readingSample.pages.some((p) => p.category === "copy-shape"),
+      "reading workbook should contain a copy-shape page",
+    ).toBe(true);
+
+    const stream = await renderWorkbookPdfStream({
+      patient,
+      title: "Activity Set #2",
+      code: "WBSHAPES",
+      createdAt: new Date("2026-06-26T00:00:00Z"),
+      sample: readingSample,
       locale: "en-US",
       amountCents: 500,
       currency: "USD",

@@ -1,0 +1,8 @@
+[
+  { "id": "g1-cs-001", "prompt": "Copy this drawing in the empty box.", "name": "House", "elements": [ { "type": "rect", "x": 25, "y": 45, "width": 50, "height": 40 }, { "type": "polygon", "points": "20,45 80,45 50,18" } ] },
+  { "id": "g1-cs-002", "prompt": "Copy this drawing in the empty box.", "name": "Five-point star", "elements": [ { "type": "polygon", "points": "50,15 61,39 87,39 66,55 75,82 50,66 25,82 34,55 13,39 39,39" } ] },
+  { "id": "g1-cs-003", "prompt": "Copy this drawing in the empty box.", "name": "Arrow", "elements": [ { "type": "line", "x1": 18, "y1": 50, "x2": 76, "y2": 50 }, { "type": "polyline", "points": "58,33 76,50 58,67" } ] },
+  { "id": "g1-cs-004", "prompt": "Copy this drawing in the empty box.", "name": "Rectangle with one diagonal", "elements": [ { "type": "rect", "x": 16, "y": 28, "width": 68, "height": 44 }, { "type": "line", "x1": 16, "y1": 28, "x2": 84, "y2": 72 } ] },
+  { "id": "g1-cs-005", "prompt": "Copy this drawing in the empty box.", "name": "Flag on a pole", "elements": [ { "type": "line", "x1": 28, "y1": 14, "x2": 28, "y2": 86 }, { "type": "rect", "x": 28, "y": 16, "width": 38, "height": 26 } ] },
+  { "id": "g1-cs-006", "prompt": "Copy this drawing in the empty box.", "name": "Hexagon", "elements": [ { "type": "polygon", "points": "50,15 81,32 81,68 50,85 19,68 19,32" } ] }
+]

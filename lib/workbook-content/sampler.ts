@@ -63,6 +63,12 @@ export function newWorkbookSeed(): string {
 
 // Per-kind page shape. 5 content pages per workbook; tuned per kind so the
 // patient sees a sensible mix that fills 4-6 pages with generous whitespace.
+//
+// copy-shape replaced sequencing in the slots below (ADR 0007): a
+// figure-copying page scales difficulty by grade and adds hand-control
+// practice, where the fixed-step sequencing task could not. No new
+// sequencing rows are minted; its bank/renderers survive only for historical
+// content_seed snapshots.
 type PageSpec = { category: WorkbookCategory; count: number };
 
 const PAGE_SHAPES: Record<WorkbookKind, PageSpec[]> = {
@@ -75,7 +81,7 @@ const PAGE_SHAPES: Record<WorkbookKind, PageSpec[]> = {
   ],
   reading: [
     { category: "reading-passages", count: 1 },
-    { category: "sequencing", count: 2 },
+    { category: "copy-shape", count: 2 },
     { category: "reading-passages", count: 1 },
     { category: "simple-logic", count: 4 },
     { category: "reading-passages", count: 1 },
@@ -85,7 +91,7 @@ const PAGE_SHAPES: Record<WorkbookKind, PageSpec[]> = {
     { category: "reading-passages", count: 1 },
     { category: "word-problems", count: 2 },
     { category: "simple-logic", count: 3 },
-    { category: "sequencing", count: 2 },
+    { category: "copy-shape", count: 2 },
   ],
 };
 

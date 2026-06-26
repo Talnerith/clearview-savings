@@ -1,7 +1,15 @@
 import {
+  Circle,
   Document,
+  Ellipse,
+  Line,
   Page,
+  Path,
+  Polygon,
+  Polyline,
+  Rect,
   StyleSheet,
+  Svg,
   Text,
   View,
   renderToStream,
@@ -13,10 +21,12 @@ import { CheckPage } from "@/lib/check-pdf";
 import type { Patient } from "@/lib/db/schema";
 import { makeRng, shuffle } from "@/lib/workbook-content/sampler";
 import type {
+  CopyShapeProblem,
   LogicProblem,
   MathFactProblem,
   ReadingPassage,
   SequencingProblem,
+  ShapeElement,
   WordProblem,
   WorkbookPage as WorkbookPageData,
   WorkbookSample,
@@ -189,6 +199,32 @@ const styles = StyleSheet.create({
     flex: 1,
     fontSize: 16,
   },
+  copyShapePrompt: {
+    marginBottom: 10,
+  },
+  copyShapeRow: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  copyShapeBox: {
+    width: 150,
+    height: 130,
+    borderWidth: 0.75,
+    borderColor: "#94a3b8",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  copyShapeArrow: {
+    width: 44,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  copyShapeBoxLabel: {
+    marginTop: 4,
+    fontSize: 11,
+    color: "#94a3b8",
+    textAlign: "center",
+  },
   pageNumber: {
     marginTop: 12,
     fontSize: 11,
@@ -224,9 +260,154 @@ function pageCategoryLabel(category: WorkbookPageData["category"]): string {
       return "Reading";
     case "sequencing":
       return "Putting things in order";
+    case "copy-shape":
+      return "Copy the drawing";
     case "simple-logic":
       return "Thinking puzzles";
   }
+}
+
+// Render the reference figure as native @react-pdf SVG primitives. Stroke-
+// only (no fill) in a 0 0 100 100 viewBox; the patient redraws it freehand.
+const SHAPE_STROKE = "#0f172a";
+const SHAPE_STROKE_WIDTH = 2;
+
+function ShapeElementPdf({ el, idx }: { el: ShapeElement; idx: number }) {
+  const stroke = SHAPE_STROKE;
+  const strokeWidth = SHAPE_STROKE_WIDTH;
+  switch (el.type) {
+    case "line":
+      return (
+        <Line
+          key={idx}
+          x1={el.x1}
+          y1={el.y1}
+          x2={el.x2}
+          y2={el.y2}
+          stroke={stroke}
+          strokeWidth={strokeWidth}
+        />
+      );
+    case "polyline":
+      return (
+        <Polyline
+          key={idx}
+          points={el.points}
+          stroke={stroke}
+          strokeWidth={strokeWidth}
+          fill="none"
+        />
+      );
+    case "polygon":
+      return (
+        <Polygon
+          key={idx}
+          points={el.points}
+          stroke={stroke}
+          strokeWidth={strokeWidth}
+          fill="none"
+        />
+      );
+    case "circle":
+      return (
+        <Circle
+          key={idx}
+          cx={el.cx}
+          cy={el.cy}
+          r={el.r}
+          stroke={stroke}
+          strokeWidth={strokeWidth}
+          fill="none"
+        />
+      );
+    case "ellipse":
+      return (
+        <Ellipse
+          key={idx}
+          cx={el.cx}
+          cy={el.cy}
+          rx={el.rx}
+          ry={el.ry}
+          stroke={stroke}
+          strokeWidth={strokeWidth}
+          fill="none"
+        />
+      );
+    case "rect":
+      return (
+        <Rect
+          key={idx}
+          x={el.x}
+          y={el.y}
+          width={el.width}
+          height={el.height}
+          stroke={stroke}
+          strokeWidth={strokeWidth}
+          fill="none"
+        />
+      );
+    case "path":
+      return (
+        <Path
+          key={idx}
+          d={el.d}
+          stroke={stroke}
+          strokeWidth={strokeWidth}
+          fill="none"
+        />
+      );
+  }
+}
+
+function CopyShapeProblems({ problems }: { problems: CopyShapeProblem[] }) {
+  return (
+    <View>
+      {problems.map((p, idx) => (
+        <View key={p.id} style={{ marginBottom: 22 }}>
+          <View style={styles.problemNumberRow}>
+            <Text style={styles.problemNumber}>{idx + 1}.</Text>
+            <View style={styles.problemBody}>
+              <Text style={styles.copyShapePrompt}>{pdfSafe(p.prompt)}</Text>
+              <View style={styles.copyShapeRow}>
+                <View>
+                  <View style={styles.copyShapeBox}>
+                    <Svg width={110} height={110} viewBox="0 0 100 100">
+                      {p.elements.map((el, elIdx) => (
+                        <ShapeElementPdf key={elIdx} el={el} idx={elIdx} />
+                      ))}
+                    </Svg>
+                  </View>
+                  <Text style={styles.copyShapeBoxLabel}>Look</Text>
+                </View>
+                <View style={styles.copyShapeArrow}>
+                  <Svg width={32} height={16} viewBox="0 0 32 16">
+                    <Line
+                      x1={2}
+                      y1={8}
+                      x2={28}
+                      y2={8}
+                      stroke="#94a3b8"
+                      strokeWidth={1.5}
+                    />
+                    <Polyline
+                      points="20,3 28,8 20,13"
+                      stroke="#94a3b8"
+                      strokeWidth={1.5}
+                      fill="none"
+                    />
+                  </Svg>
+                </View>
+                <View>
+                  <View style={styles.copyShapeBox} />
+                  <Text style={styles.copyShapeBoxLabel}>Your turn</Text>
+                </View>
+              </View>
+            </View>
+          </View>
+        </View>
+      ))}
+    </View>
+  );
 }
 
 function MathProblems({ problems }: { problems: MathFactProblem[] }) {
@@ -384,6 +565,9 @@ function ContentPage({
           problems={page.problems as SequencingProblem[]}
           workbookSeed={workbookSeed}
         />
+      )}
+      {page.category === "copy-shape" && (
+        <CopyShapeProblems problems={page.problems as CopyShapeProblem[]} />
       )}
       {page.category === "simple-logic" && (
         <LogicProblems problems={page.problems as LogicProblem[]} />

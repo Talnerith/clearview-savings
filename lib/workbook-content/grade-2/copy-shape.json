@@ -1,0 +1,8 @@
+[
+  { "id": "g2-cs-001", "prompt": "Copy this drawing in the empty box.", "name": "Square with both diagonals", "elements": [ { "type": "rect", "x": 20, "y": 20, "width": 60, "height": 60 }, { "type": "line", "x1": 20, "y1": 20, "x2": 80, "y2": 80 }, { "type": "line", "x1": 80, "y1": 20, "x2": 20, "y2": 80 } ] },
+  { "id": "g2-cs-002", "prompt": "Copy this drawing in the empty box.", "name": "Two overlapping circles", "elements": [ { "type": "circle", "cx": 38, "cy": 50, "r": 27 }, { "type": "circle", "cx": 62, "cy": 50, "r": 27 } ] },
+  { "id": "g2-cs-003", "prompt": "Copy this drawing in the empty box.", "name": "Diamond inside a square", "elements": [ { "type": "rect", "x": 18, "y": 18, "width": 64, "height": 64 }, { "type": "polygon", "points": "50,18 82,50 50,82 18,50" } ] },
+  { "id": "g2-cs-004", "prompt": "Copy this drawing in the empty box.", "name": "Triangle inside a circle", "elements": [ { "type": "circle", "cx": 50, "cy": 50, "r": 34 }, { "type": "polygon", "points": "50,18 80,68 20,68" } ] },
+  { "id": "g2-cs-005", "prompt": "Copy this drawing in the empty box.", "name": "Window (cross inside a square)", "elements": [ { "type": "rect", "x": 20, "y": 20, "width": 60, "height": 60 }, { "type": "line", "x1": 50, "y1": 20, "x2": 50, "y2": 80 }, { "type": "line", "x1": 20, "y1": 50, "x2": 80, "y2": 50 } ] },
+  { "id": "g2-cs-006", "prompt": "Copy this drawing in the empty box.", "name": "Six-point star (two triangles)", "elements": [ { "type": "polygon", "points": "50,15 82,68 18,68" }, { "type": "polygon", "points": "50,85 18,32 82,32" } ] }
+]

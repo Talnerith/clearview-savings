@@ -13,10 +13,12 @@ import { getPatientForCaregiver } from "@/lib/auth/require-patient";
 import { db } from "@/lib/db";
 import { depositCodes } from "@/lib/db/schema";
 import type {
+  CopyShapeProblem,
   LogicProblem,
   MathFactProblem,
   ReadingPassage,
   SequencingProblem,
+  ShapeElement,
   WordProblem,
   WorkbookPage,
   WorkbookSample,
@@ -47,8 +49,35 @@ function categoryLabel(category: WorkbookPage["category"]): string {
       return "Reading";
     case "sequencing":
       return "Putting things in order";
+    case "copy-shape":
+      return "Copy the drawing";
     case "simple-logic":
       return "Thinking puzzles";
+  }
+}
+
+// The "answer" to a copy-shape item is the reference figure itself — the
+// caregiver checks the patient's freehand copy against it. Rendered as inline
+// SVG from the same 0..100 element data the PDF draws.
+function ShapeElementSvg({ el }: { el: ShapeElement }) {
+  const common = { stroke: "#0f172a", strokeWidth: 2, fill: "none" } as const;
+  switch (el.type) {
+    case "line":
+      return <line x1={el.x1} y1={el.y1} x2={el.x2} y2={el.y2} {...common} />;
+    case "polyline":
+      return <polyline points={el.points} {...common} />;
+    case "polygon":
+      return <polygon points={el.points} {...common} />;
+    case "circle":
+      return <circle cx={el.cx} cy={el.cy} r={el.r} {...common} />;
+    case "ellipse":
+      return <ellipse cx={el.cx} cy={el.cy} rx={el.rx} ry={el.ry} {...common} />;
+    case "rect":
+      return (
+        <rect x={el.x} y={el.y} width={el.width} height={el.height} {...common} />
+      );
+    case "path":
+      return <path d={el.d} {...common} />;
   }
 }
 
@@ -96,8 +125,10 @@ export default async function WorkbookAnswersPage({
         </h1>
         <p className="text-sm text-slate-600 mt-1">
           For {patient.displayName}. Problem order matches the printed copy.
-          Sequencing answers are shown in canonical order; the printed copy
-          scrambles them per workbook.
+          Copy-the-drawing items show the reference figure the patient&apos;s
+          freehand copy should match. (Older workbooks may show a
+          putting-things-in-order page instead; its answers are listed in the
+          correct order, while the printed copy scrambles them.)
         </p>
       </div>
 
@@ -161,6 +192,25 @@ export default async function WorkbookAnswersPage({
                         <li key={sIdx}>{step}</li>
                       ))}
                     </ol>
+                  </div>
+                ))}
+              </div>
+            )}
+            {page.category === "copy-shape" && (
+              <div className="flex flex-wrap gap-6">
+                {(page.problems as CopyShapeProblem[]).map((p) => (
+                  <div key={p.id} className="text-center">
+                    <svg
+                      viewBox="0 0 100 100"
+                      className="w-28 h-28 border border-slate-300"
+                      role="img"
+                      aria-label={p.name}
+                    >
+                      {p.elements.map((el, elIdx) => (
+                        <ShapeElementSvg key={elIdx} el={el} />
+                      ))}
+                    </svg>
+                    <div className="mt-1 text-sm text-slate-600">{p.name}</div>
                   </div>
                 ))}
               </div>

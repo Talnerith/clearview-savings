@@ -10,6 +10,7 @@ export type WorkbookCategory =
   | "word-problems"
   | "reading-passages"
   | "sequencing"
+  | "copy-shape"
   | "simple-logic";
 
 export type WorkbookKind = "math" | "reading" | "mixed";
@@ -58,7 +59,44 @@ export type SequencingProblem = {
   // The steps in their correct chronological order. The PDF renderer
   // shuffles them for display using the workbook seed; the answer-key
   // renderer prints them in this canonical order.
+  //
+  // NOTE: no new sequencing rows are minted into workbooks — copy-shape
+  // replaced it in PAGE_SHAPES (ADR 0007). This type, its bank, and its
+  // renderers are retained only so historical workbooks (whose problems are
+  // snapshotted in deposit_codes.content_seed) still print and show answers.
   correctSequence: string[];
+};
+
+// A single stroke-only primitive in a reference figure, expressed in a fixed
+// 0..100 coordinate space (drawn into a "0 0 100 100" viewBox on both the PDF
+// and the HTML answer key). No fills, no colors — the patient copies the
+// outline freehand into the blank box beside it. Keeping shapes as plain data
+// (not pre-rendered SVG strings) lets both renderers draw them natively and
+// keeps the content_seed snapshot human-readable.
+export type ShapeElement =
+  | { type: "line"; x1: number; y1: number; x2: number; y2: number }
+  | { type: "polyline"; points: string }
+  | { type: "polygon"; points: string }
+  | { type: "circle"; cx: number; cy: number; r: number }
+  | { type: "ellipse"; cx: number; cy: number; rx: number; ry: number }
+  | { type: "rect"; x: number; y: number; width: number; height: number }
+  | { type: "path"; d: string };
+
+// "Copy the drawing" exercise. The patient is shown a reference figure and
+// redraws it in an empty box. Difficulty scales by grade via figure
+// complexity (single primitives → combined → intersecting → multi-line
+// figures), which sequencing could not do — see ADR 0007. A figure-copying
+// task also exercises visuospatial planning and hand control, complementing
+// the math/reading/logic pages.
+export type CopyShapeProblem = {
+  id: string;
+  // Patient-facing instruction (e.g. "Copy this drawing in the empty box.").
+  prompt: string;
+  // Caregiver-facing name of the figure; shown only on the answer key for
+  // context. Never patient-visible.
+  name: string;
+  // The reference figure, drawn in a 0 0 100 100 viewBox, stroke-only.
+  elements: ShapeElement[];
 };
 
 export type LogicProblem = {
@@ -72,6 +110,7 @@ export type ProblemByCategory = {
   "word-problems": WordProblem;
   "reading-passages": ReadingPassage;
   "sequencing": SequencingProblem;
+  "copy-shape": CopyShapeProblem;
   "simple-logic": LogicProblem;
 };
 
