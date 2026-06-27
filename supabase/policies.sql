@@ -189,7 +189,17 @@ create policy mfa_recovery_codes_owner on public.mfa_recovery_codes
 -- authenticated role never has table access without row scoping. SELECT only —
 -- all writes go through the server (mobile API endpoints / web Server Actions),
 -- never directly through the authenticated role.
+--
+-- `caregivers` is included even though the mobile app never SELECTs it directly:
+-- the ownership policies above subquery it (`caregiver_id in (select id from
+-- caregivers where user_id = auth.uid())`), and Postgres evaluates those
+-- subqueries with the authenticated role's privileges. Without this grant the
+-- patients/accounts/... reads fail with "permission denied for table caregivers"
+-- even though the patients grant is present. It is safe: the caregivers_self
+-- policy restricts every authenticated user to their own row (user_id =
+-- auth.uid()), so no caregiver can read another caregiver's email/PII.
 grant usage on schema public to authenticated;
+grant select on public.caregivers         to authenticated;
 grant select on public.patients           to authenticated;
 grant select on public.accounts           to authenticated;
 grant select on public.transactions       to authenticated;
