@@ -2,6 +2,7 @@ import { randomInt } from "node:crypto";
 
 import { and, asc, eq, sql } from "drizzle-orm";
 import type { PgDatabase, PgQueryResultHKT } from "drizzle-orm/pg-core";
+import { z } from "zod";
 
 import * as schema from "@/lib/db/schema";
 import {
@@ -15,6 +16,20 @@ export type AppDatabase = PgDatabase<PgQueryResultHKT, typeof schema>;
 // Alphabet excludes ambiguous glyphs: 0/O, 1/I/L. 31 characters.
 const CODE_ALPHABET = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
 const CODE_LENGTH = 8;
+
+// Shared input schema for code redemption. Interior whitespace is stripped (the
+// code is printed and entered in two 4-char groups, "ABCD 2345") and upper-cased
+// before the alphabet check. Used by both the web patient action and the mobile
+// API endpoint so the two redeem paths normalize/validate a code identically.
+export const redeemInput = z.object({
+  patientId: z.string().uuid(),
+  code: z
+    .string()
+    .transform((s) => s.replace(/\s+/g, "").toUpperCase())
+    .refine((s) => new RegExp(`^[${CODE_ALPHABET}]{${CODE_LENGTH}}$`).test(s), {
+      message: "Enter a valid deposit code.",
+    }),
+});
 
 export function generateCode(): string {
   let out = "";

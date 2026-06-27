@@ -1,7 +1,25 @@
 import { eq, inArray, sql } from "drizzle-orm";
+import { z } from "zod";
 
 import { logCaregiverAction, type AppDatabase } from "@/lib/audit-log";
 import { accounts, transactions } from "@/lib/db/schema";
+import { dollarsString } from "@/lib/money";
+
+// Shared input schema for the transfer feature, validated identically by the
+// web Server Action (FormData) and the mobile API endpoint (JSON body).
+export const transferInput = z
+  .object({
+    patientId: z.string().uuid(),
+    fromAccountId: z.string().uuid(),
+    toAccountId: z.string().uuid(),
+    amount: dollarsString,
+  })
+  .refine((v) => v.fromAccountId !== v.toAccountId, {
+    message: "Choose two different accounts.",
+    path: ["toAccountId"],
+  });
+
+export type TransferInput = z.infer<typeof transferInput>;
 
 export type PerformTransferArgs = {
   caregiverId: string;
