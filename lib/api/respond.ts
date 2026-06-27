@@ -58,6 +58,19 @@ export function jsonOk(
   return Response.json(body, { status, headers: corsHeaders(req) });
 }
 
+// Maps a thrown helper Error to a client-safe ApiError. Known invariant
+// messages (ownership, conflicts, missing rows) keep their calm message and get
+// a meaningful status; anything else becomes a generic 500 so internals don't
+// leak. ApiErrors pass through unchanged.
+export function asApiError(err: unknown): ApiError {
+  if (err instanceof ApiError) return err;
+  const msg = err instanceof Error ? err.message : "";
+  if (/belong/i.test(msg)) return new ApiError(403, "invalid_target", msg);
+  if (/already exists/i.test(msg)) return new ApiError(409, "conflict", msg);
+  if (/not found/i.test(msg)) return new ApiError(404, "not_found", msg);
+  return new ApiError(500, "internal_error", "Something went wrong.");
+}
+
 export function jsonError(
   req: Request,
   err: unknown,
