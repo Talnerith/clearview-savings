@@ -1,6 +1,6 @@
 "use server";
 
-import { and, eq, sql } from "drizzle-orm";
+import { and, eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { z } from "zod";
@@ -15,20 +15,13 @@ import {
   transactions,
 } from "@/lib/db/schema";
 import { currencyForLocale } from "@/lib/locale-currency";
+import { dollarsString, dollarsToCents } from "@/lib/money";
+import {
+  applyManualAdjustment,
+  manualAdjustmentInput,
+} from "@/lib/transactions/manual-adjustment";
 
 const uuid = z.string().uuid();
-const dollarsString = z
-  .string()
-  .trim()
-  .min(1, "Amount is required.")
-  .regex(/^\d+(\.\d{1,2})?$/, "Enter a positive amount like 1234.56.");
-
-function dollarsToCents(dollars: string): number {
-  // Accept "12" or "12.3" or "12.34". Already validated by Zod.
-  const [whole, frac = ""] = dollars.split(".");
-  const cents = (frac + "00").slice(0, 2);
-  return Number(whole) * 100 + Number(cents);
-}
 
 function bouncePatient(patientId: string, error: string): never {
   redirect(
@@ -154,30 +147,10 @@ export async function addAccountAction(formData: FormData): Promise<void> {
   redirect(`/caregiver/patients/${patient.id}?status=account_added`);
 }
 
-const adjustmentKindSchema = z.enum([
-  "deposit",
-  "withdrawal",
-  "fee",
-  "adjustment",
-]);
-const adjustmentSchema = z
-  .object({
-    patientId: uuid,
-    accountId: uuid,
-    kind: adjustmentKindSchema,
-    amount: dollarsString,
-    label: z.string().trim().min(1, "Description is required.").max(80),
-    direction: z.enum(["increase", "decrease"]).optional(),
-  })
-  .refine(
-    (v) => v.kind !== "adjustment" || v.direction !== undefined,
-    { message: "Choose increase or decrease.", path: ["direction"] },
-  );
-
 export async function manualAdjustmentAction(
   formData: FormData,
 ): Promise<void> {
-  const parsed = adjustmentSchema.safeParse({
+  const parsed = manualAdjustmentInput.safeParse({
     patientId: formData.get("patientId"),
     accountId: formData.get("accountId"),
     kind: formData.get("kind"),
@@ -194,68 +167,19 @@ export async function manualAdjustmentAction(
   const { patient, caregiver } = await getPatientForCaregiver(
     parsed.data.patientId,
   );
-  const cents = dollarsToCents(parsed.data.amount);
 
-  // Sign convention: amountCents on a transaction is the signed delta to the
-  // account balance. balance always tracks the running sum.
-  let signedCents: number;
-  switch (parsed.data.kind) {
-    case "deposit":
-      signedCents = cents;
-      break;
-    case "withdrawal":
-    case "fee":
-      signedCents = -cents;
-      break;
-    case "adjustment":
-      signedCents = parsed.data.direction === "decrease" ? -cents : cents;
-      break;
-  }
-
-  await db.transaction(async (tx) => {
-    const owned = await tx
-      .select({ id: accounts.id })
-      .from(accounts)
-      .where(
-        and(
-          eq(accounts.id, parsed.data.accountId),
-          eq(accounts.patientId, patient.id),
-        ),
-      )
-      .limit(1);
-    if (!owned[0]) {
-      throw new Error("Account does not belong to this patient.");
-    }
-
-    const [inserted] = await tx
-      .insert(transactions)
-      .values({
-        accountId: parsed.data.accountId,
-        kind: parsed.data.kind,
-        amountCents: signedCents,
-        label: parsed.data.label,
-        postedAt: new Date(),
-        source: "manual",
-      })
-      .returning();
-    if (!inserted) {
-      throw new Error("Failed to insert manual transaction");
-    }
-
-    await tx
-      .update(accounts)
-      .set({ balanceCents: sql`${accounts.balanceCents} + ${signedCents}` })
-      .where(eq(accounts.id, parsed.data.accountId));
-
-    await logCaregiverAction(tx, {
-      caregiverId: caregiver.id,
+  try {
+    await applyManualAdjustment(db, {
+      ...parsed.data,
       patientId: patient.id,
-      actionKind: "transaction_created",
-      targetKind: "transaction",
-      targetId: inserted.id,
-      after: inserted,
+      caregiverId: caregiver.id,
     });
-  });
+  } catch (err) {
+    bouncePatient(
+      patient.id,
+      err instanceof Error ? err.message : "Could not post the transaction.",
+    );
+  }
 
   revalidatePath(`/caregiver/patients/${patient.id}`);
   redirect(`/caregiver/patients/${patient.id}?status=adjustment_added`);

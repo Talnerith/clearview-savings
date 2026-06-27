@@ -2,24 +2,11 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
-import { z } from "zod";
 
 import { getPatientForCaregiver } from "@/lib/auth/require-patient";
 import { db } from "@/lib/db";
-import { performTransfer } from "@/lib/transfers/transfer";
-
-const uuid = z.string().uuid();
-const dollarsString = z
-  .string()
-  .trim()
-  .min(1, "Amount is required.")
-  .regex(/^\d+(\.\d{1,2})?$/, "Enter a positive amount like 1234.56.");
-
-function dollarsToCents(dollars: string): number {
-  const [whole, frac = ""] = dollars.split(".");
-  const cents = (frac + "00").slice(0, 2);
-  return Number(whole) * 100 + Number(cents);
-}
+import { dollarsToCents } from "@/lib/money";
+import { performTransfer, transferInput } from "@/lib/transfers/transfer";
 
 function bouncePatient(patientId: string, error: string): never {
   redirect(
@@ -27,20 +14,8 @@ function bouncePatient(patientId: string, error: string): never {
   );
 }
 
-const transferSchema = z
-  .object({
-    patientId: uuid,
-    fromAccountId: uuid,
-    toAccountId: uuid,
-    amount: dollarsString,
-  })
-  .refine((v) => v.fromAccountId !== v.toAccountId, {
-    message: "Choose two different accounts.",
-    path: ["toAccountId"],
-  });
-
 export async function transferAction(formData: FormData): Promise<void> {
-  const parsed = transferSchema.safeParse({
+  const parsed = transferInput.safeParse({
     patientId: formData.get("patientId"),
     fromAccountId: formData.get("fromAccountId"),
     toAccountId: formData.get("toAccountId"),
