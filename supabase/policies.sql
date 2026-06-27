@@ -204,3 +204,6 @@ grant select on public.patients           to authenticated;
 grant select on public.accounts           to authenticated;
 grant select on public.transactions       to authenticated;
 grant select on public.scheduled_deposits to authenticated;
+-- audit_log: the mobile caregiver Audit-log screen reads it via PostgREST. The
+-- audit_log_owner policy scopes rows to the caregiver's own actions.
+grant select on public.audit_log          to authenticated;
