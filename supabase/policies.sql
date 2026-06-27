@@ -174,3 +174,23 @@ create policy mfa_recovery_codes_owner on public.mfa_recovery_codes
       select id from public.caregivers where user_id = auth.uid()
     )
   );
+
+-- ───────────────────────────────────────────────────────────────────────────
+-- Table privileges for PostgREST (the Supabase Data API).
+--
+-- The mobile app (clearview-savings-mobile) reads through PostgREST as the
+-- `authenticated` role; the web app reads/writes via a direct DATABASE_URL
+-- connection (DB owner) and does NOT depend on these grants — which is why this
+-- gap stayed hidden until the mobile app first read these tables. RLS above
+-- scopes the ROWS; these GRANTs let the role reach the TABLE at all. Without
+-- them PostgREST returns "permission denied for table ..." (SQLSTATE 42501).
+--
+-- These MUST come after the `enable row level security` block above so the
+-- authenticated role never has table access without row scoping. SELECT only —
+-- all writes go through the server (mobile API endpoints / web Server Actions),
+-- never directly through the authenticated role.
+grant usage on schema public to authenticated;
+grant select on public.patients           to authenticated;
+grant select on public.accounts           to authenticated;
+grant select on public.transactions       to authenticated;
+grant select on public.scheduled_deposits to authenticated;
