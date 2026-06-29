@@ -20,10 +20,7 @@ caregiver.
 
 ## Screenshots
 
-> The images below live in [`docs/screenshots/`](docs/screenshots/). If
-> they appear broken, they haven't been captured yet — see
-> [docs/screenshots/README.md](docs/screenshots/README.md) for the exact
-> filenames and a step-by-step capture guide.
+> The images below live in [`docs/screenshots/`](docs/screenshots/).
 
 **Patient view** — large type, real-bank skeleton (greeting band, hero
 balance, transaction table with a running-balance column):
@@ -193,4 +190,7 @@ simulation tool.
 
 ## License
 
-Proprietary — all rights reserved. Not licensed for redistribution.
+Source-available, all rights reserved. The code is public for viewing and
+evaluation (e.g. by prospective employers); it is **not** licensed for
+redistribution, production use, or derivative services. See [`LICENSE`](LICENSE)
+for the full terms.
