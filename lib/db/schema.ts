@@ -72,6 +72,7 @@ export const auditActionKindEnum = pgEnum("audit_action_kind", [
   "workbook_code_generated",
   "transfer_made",
   "code_voided",
+  "patient_deleted",
 ]);
 
 export const auditTargetKindEnum = pgEnum("audit_target_kind", [

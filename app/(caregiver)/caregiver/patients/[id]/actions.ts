@@ -11,6 +11,7 @@ import {
 } from "@/lib/accounts/manage";
 import { getPatientForCaregiver } from "@/lib/auth/require-patient";
 import { db } from "@/lib/db";
+import { deletePatient, deletePatientInput } from "@/lib/patients/delete-patient";
 import { updatePatientSettings, updatePatientSettingsInput } from "@/lib/patients/update-settings";
 import {
   addScheduledDeposit,
@@ -212,6 +213,36 @@ export async function deleteScheduledDepositAction(
 
   revalidatePath(`/caregiver/patients/${patient.id}`);
   redirect(`/caregiver/patients/${patient.id}?status=scheduled_deleted`);
+}
+
+export async function deletePatientAction(formData: FormData): Promise<void> {
+  const parsed = deletePatientInput.safeParse({
+    patientId: formData.get("patientId"),
+  });
+  if (!parsed.success) {
+    const patientId = (formData.get("patientId") as string | null) ?? "";
+    bouncePatient(patientId, "Invalid input.");
+  }
+
+  const { patient, caregiver } = await getPatientForCaregiver(
+    parsed.data.patientId,
+  );
+
+  try {
+    await deletePatient(db, {
+      patientId: patient.id,
+      caregiverId: caregiver.id,
+    });
+  } catch (err) {
+    bouncePatient(
+      patient.id,
+      err instanceof Error ? err.message : "Could not delete the patient.",
+    );
+  }
+
+  // The patient page no longer exists — bounce to the dashboard.
+  revalidatePath("/caregiver");
+  redirect("/caregiver?status=patient_deleted");
 }
 
 export async function updatePatientSettingsAction(

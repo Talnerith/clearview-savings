@@ -144,6 +144,7 @@ export function MfaSecuritySection({ enabled, unusedCodeCount }: Props) {
             value={code}
             onChange={(e) => setCode(e.target.value.replace(/\D/g, ""))}
             placeholder="123456"
+            autoFocus
           />
         </div>
         <div className="flex gap-2">
@@ -183,6 +184,7 @@ export function MfaSecuritySection({ enabled, unusedCodeCount }: Props) {
             value={disableCode}
             onChange={(e) => setDisableCode(e.target.value)}
             placeholder="123456 or ABCDE-FGHIJ"
+            autoFocus
           />
         </div>
         <div className="flex gap-2">

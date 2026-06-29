@@ -43,6 +43,13 @@
       "when": 1780291568014,
       "tag": "0005_workbook_reward_to_check",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1782724542614,
+      "tag": "0006_worried_scorpion",
+      "breakpoints": true
     }
   ]
 }

@@ -26,6 +26,7 @@ import { materializeScheduledDeposits } from "@/lib/scheduled-deposits/materiali
 import {
   addAccountAction,
   addScheduledDepositAction,
+  deletePatientAction,
   deleteScheduledDepositAction,
   manualAdjustmentAction,
   renameAccountAction,
@@ -184,6 +185,19 @@ export default async function CaregiverPatientPage({
               Switch to patient view ↗
             </a>
           </Button>
+          <ConfirmingForm
+            action={deletePatientAction}
+            message={`Delete ${patient.displayName} and all of their accounts, transactions, and history? This can't be undone.`}
+          >
+            <input type="hidden" name="patientId" value={patient.id} />
+            <Button
+              type="submit"
+              variant="ghost"
+              className="text-red-700 hover:text-red-800"
+            >
+              Delete patient
+            </Button>
+          </ConfirmingForm>
         </div>
       </div>
 

@@ -63,6 +63,11 @@ export default async function CaregiverDashboardPage({
           Patient added.
         </p>
       )}
+      {status === "patient_deleted" && (
+        <p className="rounded-md border border-emerald-300 bg-emerald-50 px-3 py-2 text-sm text-emerald-900">
+          Patient deleted.
+        </p>
+      )}
       {error && (
         <p className="rounded-md border border-red-300 bg-red-50 px-3 py-2 text-sm text-red-900">
           {error}

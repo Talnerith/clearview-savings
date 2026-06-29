@@ -75,6 +75,7 @@ export default async function ChallengePage({
                 name="code"
                 autoComplete="one-time-code"
                 placeholder="ABCDE-FGHIJ"
+                autoFocus
                 required
               />
             </div>
@@ -103,6 +104,7 @@ export default async function ChallengePage({
                 autoComplete="one-time-code"
                 maxLength={6}
                 placeholder="123456"
+                autoFocus
                 required
               />
             </div>

@@ -1,0 +1,1 @@
+ALTER TYPE "public"."audit_action_kind" ADD VALUE 'patient_deleted';
