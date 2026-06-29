@@ -157,3 +157,26 @@ CLAUDE.md → `docs/specs/M9.md` (frozen; criterion 1 waived, see plan) →
 `docs/milestones/M9.md` (plan + Deviations) → this file → inspect
 `app/(patient)` to confirm → `pnpm typecheck && pnpm lint && pnpm test
 --run` → wait for "go".
+
+## Post-M9 addendum (2026-06-29) — not a milestone
+
+Small, mobile-driven additions made after M9 closed (routine feature/fix work,
+no frozen spec):
+
+- **Delete a patient** — new caregiver write following the M2/M3
+  shared-endpoint pattern: `lib/patients/delete-patient.ts` (ownership-scoped,
+  audits `patient_deleted`, cascade cleanup) + co-located pg-mem test;
+  `POST /api/m/patients/delete` (`requireApiPatient`); `deletePatientAction`;
+  red "Delete patient" button (`ConfirmingForm`) on the patient detail header;
+  "Patient deleted." dashboard status. New `audit_action_kind` enum value
+  `patient_deleted` → migration `drizzle/0006_worried_scorpion.sql`,
+  **applied to production**. Test suite green (343 passed).
+- **MFA code autofocus** — `autoFocus` on the challenge-page and Security-section
+  code inputs.
+- **License** — switched from MIT to a source-available, all-rights-reserved
+  notice (no redistribution); README aligned.
+
+Commits: `61026c1` (delete-patient + MFA autofocus), `eea9bd3` (license/README).
+The cross-repo record (mobile UI + smoke test) lives in the mobile repo's
+`docs/milestones/M3-progress.md` "Post-M3 follow-up". M10 remains the next
+proper milestone (write `docs/specs/M10.md` first).
